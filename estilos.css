@@ -1,0 +1,236 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: #fffaf7;
+    color: #333;
+  }
+  
+  header {
+    background: #ffb6a3;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 50px;
+  }
+  /* ===== Navegación ===== */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #222; /* color normal del texto */
+  font-weight: bold;
+  font-size: 18px;
+  transition: all 0.3s ease; /* suave transición */
+  padding: 8px 15px;
+  border-radius: 10px;
+}
+
+/* Efecto al pasar el cursor */
+nav ul li a:hover {
+  background-color: #ffb6c1; /* color rosado visible */
+  color: white; /* texto blanco para contraste */
+  box-shadow: 0 0 10px rgba(255, 182, 193, 0.7); /* brillo suave */
+  transform: scale(1.05); /* efecto de aumento sutil */
+}
+
+  
+  
+  
+  nav a {
+    color: rgb(155, 144, 144);
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  nav ul li a.active {
+    background-color: #f59ecb; /* mismo color del hover */
+    color: white;
+    box-shadow: 0 0 10px rgba(245, 158, 203, 0.8);
+  }
+  
+  .banner {
+    text-align: center;
+    padding: 50px 20px;
+    background: #ffe3db;
+  }
+  
+  .btn {
+    background: #ff7b54;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 20px;
+  }
+  
+  .productos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .producto img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+  }
+  
+  /* Efecto de zoom al pasar el cursor 
+  .producto img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+  }*/
+
+  /* Estilos para el contenedor del carrusel */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 200px; /* Ajusta la altura del carrusel */
+  overflow: hidden; /* Oculta cualquier contenido que se salga del contenedor */
+}
+
+/* Estilos para las imágenes del carrusel */
+.carousel-images {
+  display: flex;
+  width: calc(100% * 4); /* Ajusta el ancho dinámicamente según el número de imágenes */
+  height: 100%;
+  transition: transform 1s ease-in-out; /* Transición más rápida (1 segundo) */
+}
+
+.carousel-images img {
+  flex: 0 0 100%; /* Cada imagen ocupa el 100% del ancho del contenedor */
+  height: 100%; /* Ajusta la altura de las imágenes al contenedor */
+  object-fit: cover; /* Asegura que las imágenes mantengan su proporción */
+  padding: 0px; /* Añade espacio alrededor de las imágenes */
+  border-radius: 10px; /* Opcional: redondea las esquinas de las imágenes */
+}
+
+/* Estilos para centrar el contenido del carrusel */
+.carousel-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra el contenido horizontal y verticalmente */
+  text-align: center;
+  color: white; /* Cambia el color del texto si es necesario */
+  z-index: 2; /* Asegúrate de que el contenido esté por encima de las imágenes */
+}
+
+.carousel-content h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.carousel-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.carousel-content .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff6f61; /* Cambia el color del botón según tu diseño */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-content .btn:hover {
+  background-color: #ff3b2f; /* Color al pasar el cursor */
+}
+  
+  .producto {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+  }
+  
+  footer {
+    background: #ffb6a3;
+    color: rgb(126, 108, 108);
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 30px;
+  }
+
+  /* Modal oculto por defecto */
+  .modal {
+    display: none; /* Oculto inicialmente */
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+  }
+  
+  .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+  }
+  
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .whatsapp-button {
+    position: fixed;
+    bottom: 20px; /* Ajusta la distancia desde la parte inferior */
+    right: 20px; /* Ajusta la distancia desde la parte derecha */
+    width: 60px; /* Tamaño del botón */
+    height: 60px;
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+  }
+  
+  .whatsapp-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%; /* Hace que el botón sea circular */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para un efecto flotante */
+    transition: transform 0.3s ease; /* Efecto al pasar el cursor */
+  }
+  
+  .whatsapp-button img:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el cursor */
+  }

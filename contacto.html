@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Manillitas Artesanales</title>
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    /* --- Estilos específicos para contacto --- */
+    .contacto {
+      text-align: center;
+      padding: 50px 20px;
+      background: #fffaf7;
+    }
+
+    .contacto h1 {
+      color: #ff7b54;
+    }
+
+    .info-contacto {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      margin-top: 30px;
+    }
+
+    .info-contacto iframe {
+      width: 100%;
+      max-width: 500px;
+      height: 350px;
+      border: none;
+      border-radius: 15px;
+    }
+
+    .datos {
+      max-width: 400px;
+      text-align: left;
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .datos h2 {
+      color: #ff7b54;
+      margin-bottom: 10px;
+    }
+
+    .datos p {
+      font-size: 17px;
+      margin: 10px 0;
+    }
+
+    .datos a {
+      color: #ff7b54;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .datos a:hover {
+      text-decoration: underline;
+      color: #ff956a;
+    }
+
+    .social {
+      margin-top: 20px;
+    }
+
+    .social a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #ff7b54;
+      font-weight: bold;
+      text-decoration: none;
+      margin-right: 15px;
+      transition: 0.3s;
+    }
+
+    .social a:hover {
+      color: #ff956a;
+    }
+
+    .social img {
+      width: 25px;
+      height: 25px;
+      border-radius: 5px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      transition: 0.3s;
+      z-index: 100;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    .whatsapp-float img {
+      width: 30px;
+      height: 30px;
+    }
+
+    footer {
+      background: #ff7b54;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="img/logo.jpeg" alt="Logo Manillitas" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="contacto.html" class="activo">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="contacto">
+    <h1>📍 Nuestra ubicación</h1>
+    <p>Encuéntranos en el condado de Broward, Florida o escríbenos a nuestro correo.</p>
+
+    <div class="info-contacto">
+      <!-- Mapa de Broward, Florida -->
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58813.72707909354!2d-80.22509292830707!3d26.172337366472733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9a0a9643846f7%3A0x4898037db7a55ce0!2sBroward%20County%2C%20Florida!5e0!3m2!1ses!2sus!4v1728949778123!5m2!1ses!2sus" 
+        allowfullscreen="" loading="lazy">
+      </iframe>
+
+      <div class="datos">
+        <h2>Contáctanos</h2>
+        <p><strong>Correo:</strong></p>
+        <p>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Polarizadosmedellin@gmail.com&su=Consulta%20desde%20la%20web" target="_blank">
+            Polarizadosmedellin@gmail.com
+          </a>
+        </p>
+        <p><strong>Horario:</strong><br>Lunes a Sábado 9:00 am - 6:00 pm</p>
+        <p><strong>Ubicación:</strong><br>Condado de Broward, Florida, EE.UU.</p>
+
+        <div class="social">
+          <h2>Síguenos</h2>
+          <a href="https://www.instagram.com/marianitabrazaletes/" target="_blank">
+            <img src="img/Instagram_icon.png" alt="Instagram"> @marianitabrasaletes
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ícono flotante de WhatsApp -->
+  <a href="https://wa.me/573001234567?text=Hola%20quiero%20más%20información%20sobre%20las%20manillitas" 
+     class="whatsapp-float" target="_blank" title="Chatea con nosotros">
+    <img src="img/whatapp.png" alt="WhatsApp">
+  </a>
+
+  <footer>
+    <p>&copy; 2025 Manillitas Artesanales | Diseñado por Efraín Coral</p>
+  </footer>
+
+  <script>
+    // Resaltar enlace activo según la URL actual
+    const currentPage = window.location.pathname.split("/").pop();
+    const links = document.querySelectorAll("nav ul li a");
+    links.forEach(link => {
+      const href = link.getAttribute("href");
+      if (href === currentPage || (currentPage === "" && href === "contacto.html")) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+</body>
+</html>

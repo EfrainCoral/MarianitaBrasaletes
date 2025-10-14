@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marianita Brasaletes</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="icon" href="img/logocircular.png">
+  <style>
+    body {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: background-image 1s ease-in-out;
+    }
+
+    /* Fondo semitransparente para que el texto se lea mejor */
+    header, section, footer {
+      background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 12px;
+      margin: 10px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="img/logocircular.png" alt="Logo Manillitas" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="banner">
+    <div class="carousel">
+      <div class="carousel-images">
+        <img src="img/combo1.jpeg" alt="Producto 1">
+        <img src="img/combo2.jpeg" alt="Producto 2">
+        <img src="img/combo3.jpeg" alt="Producto 3">
+        <img src="img/combo4.jpeg" alt="Producto 4">
+      </div>
+      <div class="carousel-content">
+        <h1>✨ Marianita Brasaletes ✨</h1>
+        <p>Hechas a mano con amor y estilo único.</p>
+        <a href="productos.html" class="btn">Ver productos</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="destacados">
+    <h2>Productos De Temporada</h2>
+    <div class="productos">
+      <div class="producto">
+        <img src="img/img1.jpeg" alt="Manilla 1">
+        <h3>Manilla Cuencas en madera con piedras </h3>
+      
+      </div>
+      <div class="producto">
+        <img src="img/combo21.jpeg" alt="Manilla 2">
+        <h3>Manilla Cuencas en colores</h3>
+        
+      </div>
+      <div class="producto">
+        <img src="img/combo20.jpeg" alt="Manilla 2">
+        <h3>Manilla Piedra y ojo turco negro</h3>
+       
+      </div>
+      <div class="producto">
+        <img src="img/combo19.jpeg" alt="Manilla 2">
+        <h3>Manilla Perlas</h3>
+       
+      </div>
+    </div>
+  </section>
+
+  <section class="destacados">
+    <h2>Productos Destacados</h2>
+    <div class="productos">
+      <div class="producto">
+        <img src="img/mar1.jpeg" alt="Manilla 1">
+        <h3>Manilla</h3>
+        <p>Pedidos</p>
+      </div>
+      <div class="producto">
+        <img src="img/combo15.jpeg" alt="Manilla 2">
+        <h3>Manilla</h3>
+        <p>Pedidos</p>
+      </div>
+      <div class="producto">
+        <img src="img/combo10.jpeg" alt="Manilla 2">
+        <h3>Manilla</h3>
+        <p>Pedidos</p>
+      </div>
+      <div class="producto">
+        <img src="img/corazon.jpeg" alt="Manilla 2">
+        <h3>Manilla</h3>
+        <p>Pedidos</p>
+      </div>
+    </div>
+  </section>
+
+  <div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Brasaletes Marianita | Diseñado por Efraín Coral</p>
+  </footer>
+
+  <a href="https://wa.me/17865217157?text=¡Hola!%20Quisiera%20más%20información%20sobre%20sus%20productos." 
+     class="whatsapp-button" target="_blank">
+    <img src="img/whatapp.png" alt="WhatsApp" />
+  </a>
+
+  <script src="js/main.js"></script>
+  <script src="productos.js"></script>
+
+  <script>
+    // Script para cambiar el fondo según el mes
+    const month = new Date().getMonth(); // 0 = enero, 11 = diciembre
+    const backgrounds = [
+      "enero.jpg", "febrero.jpg", "marzo.jpg", "abril.jpg",
+      "mayo.jpg", "junio.jpg", "julio.jpg", "agosto.jpg",
+      "septiembre.jpg", "octubre.jpg", "noviembre.jpg", "diciembre.jpg"
+    ];
+    document.body.style.backgroundImage = `url('img/${backgrounds[month]}')`;
+  </script>
+
+  <script>
+    // Resaltar enlace activo según la URL actual
+    const currentPage = window.location.pathname.split("/").pop(); // obtiene el nombre del archivo actual
+    const links = document.querySelectorAll("nav ul li a");
+  
+    links.forEach(link => {
+      const href = link.getAttribute("href");
+      if (href === currentPage || (currentPage === "" && href === "index.html")) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+  
+  
+</body>
+</html>
